@@ -1,0 +1,9 @@
+---
+- name: Copy docker-compose file
+  template:
+    src: "docker-compose.yml.j2"
+    dest: "/tmp/docker-compose.yml"
+
+- name: Docker compose up
+  shell: "docker compose -f /tmp/docker-compose.yml up -d"
+
