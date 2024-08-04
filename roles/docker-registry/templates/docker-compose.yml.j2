@@ -5,6 +5,8 @@ services:
   registry-server:
     image: "{{ registry_image }}"
     restart: always
+    ports:
+      - "5000:5000"
     environment:
       # REGISTRY_HTTP_HEADERS_Access-Control-Allow-Origin: '[http://registry.example.com]'  # Adjust origin as needed
       # REGISTRY_HTTP_HEADERS_Access-Control-Allow-Methods: '[HEAD,GET,OPTIONS,DELETE]'
@@ -24,7 +26,7 @@ services:
 
   # Registry UI
   registry-ui:
-    image: joxit/docker-registry-ui:main
+    image: "{{ registry_ui_image }}"
     restart: always
     ports:
       - 80:80
@@ -42,4 +44,3 @@ services:
         # - REGISTRY_AUTH_HTPASSWD_REALM: 'My Docker Registry'  # Match server realm
       - CATALOG_ELEMENTS_LIMIT=1000
     container_name: registry-ui
-
