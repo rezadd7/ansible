@@ -1,4 +1,5 @@
 ---
-- hosts:
+- hosts: registry
   roles:
-    - role:
+    # - role: install-docker
+    - role: docker-registry 
