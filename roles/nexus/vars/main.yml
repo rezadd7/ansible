@@ -1,0 +1,2 @@
+data_dir: "/data/nexus-data"
+nexus_image: "192.168.17.120:5000/sonatype/nexus3:latest"

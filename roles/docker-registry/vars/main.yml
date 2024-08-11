@@ -1,4 +1,3 @@
 registry_image: "registry:2.8.3"
 registry_ui_image: "joxit/docker-registry-ui:main"
 registry_dir: "/data"
-registry_ip: "192.168.150.120"

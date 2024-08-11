@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  nexus:
+    image: "{{ nexus_image }}"
+    container_name: nexus
+    ports:
+      - "8081:8081"
+      - "8083:8083"
+    volumes:
+      - "{{ data_dir }}:/nexus-data"
+    environment:
+      - INSTALL4J_ADD_VM_PARAMS=-Xms1200m -Xmx1200m
+    networks:
+      - nexus-network
+    restart: unless-stopped
+
+networks:
+  nexus-network:
+    driver: bridge

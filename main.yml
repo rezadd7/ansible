@@ -1,5 +1,10 @@
 ---
-- hosts: registry
+#- hosts: registry
+#  roles:
+#     - role: install-docker
+#     - role: docker-registry
+#    
+- hosts: nexus
   roles:
     # - role: install-docker
-    - role: docker-registry 
+    - role: nexus 
