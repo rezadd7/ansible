@@ -25,3 +25,21 @@
     - postgres:latest 
     - gitlab/gitlab-ce:latest
     - gitlab/gitlab-runner:latest
+
+- name: Set Tag on image
+  command: "docker tag {{ item }} {{ registry_ip }}:5000/{{ item }}"
+  loop:
+    - sonatype/nexus3:latest
+    - sonarqube:latest
+    - postgres:latest
+    - gitlab/gitlab-ce:latest
+    - gitlab/gitlab-runner:latest
+
+- name: Push image to registry
+  command: "docker push {{ registry_ip }}:5000/{{ item }}"
+  loop:
+    - sonatype/nexus3:latest
+    - sonarqube:latest
+    - postgres:latest
+    - gitlab/gitlab-ce:latest
+    - gitlab/gitlab-runner:latest
