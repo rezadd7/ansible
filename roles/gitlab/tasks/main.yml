@@ -1,0 +1,19 @@
+---
+- name: Copy daemon.json
+  template:
+    src: "daemon.json.j2"
+    dest: "/etc/docker/daemon.json"
+
+- name: Ensure docker deamon is running
+  service:
+    name: docker
+    state: restarted
+
+- name: Copy docker-compose file
+  template:
+    src: "docker-compose.yml.j2"
+    dest: "/tmp/docker-compose.yml"
+
+- name: Docker compose up
+  shell: "docker compose -f /tmp/docker-compose.yml up -d"
+

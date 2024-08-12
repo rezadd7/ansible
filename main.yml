@@ -4,7 +4,12 @@
 #     - role: install-docker
 #     - role: docker-registry
 #    
-- hosts: nexus
+#- hosts: nexus
+#  roles:
+#    - role: install-docker
+#    - role: nexus
+#
+- hosts: gitlab
   roles:
     # - role: install-docker
-    - role: nexus 
+    - role: gitlab 

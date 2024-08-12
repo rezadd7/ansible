@@ -1,0 +1,5 @@
+runner_dir: "/data/gitlab-runner"
+gtilab_dir_config: "/data/gitlab/config"
+gtilab_dir_log: "/data/gitlab/logs"
+gtilab_dir_data: "/data/gitlab/data"
+external_ip: "192.168.17.135"
