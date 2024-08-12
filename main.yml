@@ -9,7 +9,13 @@
 #    - role: install-docker
 #    - role: nexus
 #
-- hosts: gitlab
+#- hosts: gitlab
+#  roles:
+#    - role: install-docker
+#    - role: gitlab
+#
+- hosts: sonarqube
   roles:
-    # - role: install-docker
-    - role: gitlab 
+    - role: install-docker
+    - role: sonarqube
+ 

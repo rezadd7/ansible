@@ -64,3 +64,13 @@
       #    - start-docker
       #    - enable-docker
       #
+- name: Copy daemon.json
+  template:
+    src: "daemon.json.j2"
+    dest: "/etc/docker/daemon.json"
+
+- name: Ensure docker deamon is running
+  service:
+    name: docker
+    state: restarted
+

@@ -1,0 +1,6 @@
+data_dir: "/data/sonarqube"
+  #conf: "/data/sonarqube/conf"
+  #data: "/data/sonarqube/data"
+  #logs: "/data/sonarqube/logs"
+  #extensions: "/data/sonarqube/extensions"
+postgres_data: "/data/postgres"
